@@ -1,7 +1,7 @@
 {
   "name": "https://ashari-tec.github.io/Lembur/",
   "short_name": "Aplikasi lembur",
-  "start_url": "/",
+  "start_url": "Lembur",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
