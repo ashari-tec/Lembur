@@ -7,7 +7,312 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <style>
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+#greeting {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #8C4F3D, #A6856D, #D2B48C, #94B49F, #679267, #456D75, #2A4D69);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: left;
+    margin-top: 8px;
+    margin-left: 12px;
+}
+
+.custom-modal .modal-content {
+    background: linear-gradient(90deg, #a8dadc, #457b9d, #1d3557); /* Gradasi warna bumi */
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tambahkan ini ke file style.css atau dalam tag <style> di HTML */
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-100%); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutToTop {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-100%); }
+}
+
+.modal.slide-in {
+    animation: slideInFromTop 0.5s forwards;
+}
+
+.modal.slide-out {
+    animation: slideOutToTop 0.5s forwards;
+}
+
+.custom-modal .modal-header {
+    border-bottom: none;
+}
+
+.custom-modal .modal-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.custom-modal .btn-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.custom-modal .modal-body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+.custom-modal .form-label {
+    color: #fff;
+    font-weight: 500;
+}
+
+.custom-modal .btn-success {
+    background-color: #1d3557;
+    border-color: #1d3557;
+}
+
+.custom-modal .btn-success:hover {
+    background-color: #457b9d;
+    border-color: #457b9d;
+}
+
+.custom-modal .alert {
+    background-color: #457b9d;
+    border-color: #1d3557;
+    color: #fff;
+}
+
+.section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+
+.section-earth {
+    background-color: #a8dadc;
+    color: white;
+}
+
+.section-sky {
+    background-color: #457b9d;
+    color: #333;
+}
+
+.section-water {
+    background-color: #1d3557;
+    color: white;
+}
+
+.table-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.table-scroll table {
+    width: 100%;
+}
+
+.table-scroll thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    z-index: 1;
+}
+
+.total-lembur, .total-gaji {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+}
+#gajiKotorHistory {
+    font-size: 0.85em;
+    color: gray;
+    margin-top: 10px;
+}
+
+h2, h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-control {
+    font-size: 1rem;
+}
+
+.btn {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: blue;
+}
+
+.table-container {
+    font-size: 0.875rem;
+}
+
+.table {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    border-color: #ddd;
+    padding: 7px;
+}
+
+.table thead {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.alert {
+    display: none;
+    margin-top: 10px;
+}
+
+.filter-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Export buttons styling */
+.export-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-export {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+}
+
+.btn-csv {
+    background: #28a745;
+    color: white;
+    border: none;
+}
+
+.btn-excel {
+    background: #17a2b8;
+    color: white;
+    border: none;
+}
+
+.btn-pdf {
+    background: #dc3545;
+    color: white;
+    border: none;
+}
+
+.btn-export:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Atur body dan html untuk tinggi penuh */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pastikan konten memenuhi tinggi penuh kecuali footer */
+.content {
+    flex: 1; /* Ini akan memaksa konten utama mengisi sisa ruang */
+}
+
+/* Custom Footer */
+.custom-footer {
+    background: linear-gradient(90deg, #a8dadc, #457b9d, #1d3557);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.custom-footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.custom-footer .footer-links li {
+    display: inline;
+}
+
+.custom-footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.custom-footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+    }
+    
+    .export-buttons {
+        justify-content: center;
+    }
+    
+    .btn-export {
+        flex: 1;
+        text-align: center;
+        min-width: 80px;
+    }
+}
+</style>
 <h4 id="greeting"></h4>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -56,13 +361,34 @@
                 <option value="">Pilih Bulan</option>
                 <option value="01">Januari</option>
                 <option value="02">Februari</option>
-                <!-- Tambahkan bulan lainnya -->
+                <option value="03">Maret</option>
+                <option value="04">April</option>
+                <option value="05">Mei</option>
+                <option value="06">Juni</option>
+                <option value="07">Juli</option>
+                <option value="08">Agustus</option>
+                <option value="09">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
             </select>
             <select id="filterYear" class="form-select">
                 <option value="">Pilih Tahun</option>
                 <!-- Tahun akan diisi secara dinamis -->
             </select>
-            <!-- <button id="filterButton" class="btn btn-secondary">Filter</button> -->
+            
+            <!-- Export Buttons -->
+            <div class="export-buttons">
+                <button id="exportCSV" class="btn btn-export btn-csv">
+                    <i class="bi bi-file-earmark-text"></i> CSV
+                </button>
+                <button id="exportExcel" class="btn btn-export btn-excel">
+                    <i class="bi bi-file-earmark-spreadsheet"></i> Excel
+                </button>
+                <!-- ><button id="exportPDF" class="btn btn-export btn-pdf">
+                    <i class="bi bi-file-earmark-pdf"></i> PDF
+                </button> -->
+            </div>
         </div>
         <div class="table-container">
             <div class="table-scroll">
@@ -108,8 +434,391 @@
         </div>
     </div>
 
+    <!-- Include libraries for export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set tanggal input ke tanggal hari ini
+    const tanggalInput = document.getElementById('tanggal');
+    const today = new Date().toISOString().split('T')[0];
+    tanggalInput.value = today;
+
+    // Isi opsi jam lembur dari 1 sampai 24
+    const jamSelect = document.getElementById('jam');
+    for (let i = 1; i <= 24; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `${i} Jam`;
+        jamSelect.appendChild(option);
+    }
+
+    // Ambil nilai UMR dari localStorage dan set sebagai nilai default input
+    let umrBulanan = parseFloat(localStorage.getItem('umrBulanan')) || 2065000;
+    let umrPerJam = parseFloat(localStorage.getItem('umrPerJam')) || 9620;
+
+    document.getElementById('umrBulanan').value = umrBulanan;
+    document.getElementById('umrPerJam').value = umrPerJam;
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const greetingElement = document.getElementById('greeting');
+    const currentHour = new Date().getHours();
+    let greeting;
+
+    if (currentHour < 10) {
+        greeting = "Halo, Selamat Pagi";
+    } else if (currentHour < 15) {
+        greeting = "Halo, Selamat Siang";
+    } else if (currentHour < 18) {
+        greeting = "Halo, Selamat Sore";
+    } else {
+        greeting = "Halo, Selamat Malam";
+    }
+
+    greetingElement.textContent = greeting;
+
+    // Tambahkan efek gradasi warna bumi
+    greetingElement.style.background = 'linear-gradient(90deg, #a8dadc, #457b9d, #1d3557)';
+    greetingElement.style.webkitBackgroundClip = 'text';
+    greetingElement.style.webkitTextFillColor = 'transparent';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    let lemburData = JSON.parse(localStorage.getItem('lemburData')) || [];
+    let umrBulanan = parseFloat(localStorage.getItem('umrBulanan')) || 2065000;
+    let umrPerJam = parseFloat(localStorage.getItem('umrPerJam')) || 9620;
+
+    function saveData() {
+        localStorage.setItem('lemburData', JSON.stringify(lemburData));
+        localStorage.setItem('umrBulanan', umrBulanan);
+        localStorage.setItem('umrPerJam', umrPerJam);
+    }
+
+    function updateCurrentMonthTotals() {
+        const currentMonth = new Date().getMonth();
+        const currentYear = new Date().getFullYear();
+
+        let filteredData = lemburData.filter(entry => {
+            let entryDate = new Date(entry.tanggal);
+            return entryDate.getMonth() === currentMonth && entryDate.getFullYear() === currentYear;
+        });
+
+        let totalJam = filteredData.reduce((sum, entry) => sum + entry.jam, 0);
+        let gajiKotor = totalJam * 1.5 * umrPerJam + umrBulanan;
+
+        document.getElementById('totalLembur').textContent = `Lembur Bulan Ini: ${totalJam} Jam`;
+        document.getElementById('totalGaji').textContent = `Gaji Kotor: ${gajiKotor.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' })}`;
+
+        updatePreviousMonthsTotals();
+    }
+
+    function updatePreviousMonthsTotals() {
+        const currentMonth = new Date().getMonth();
+        const currentYear = new Date().getFullYear();
+
+        let historyHtml = '';
+
+        for (let i = 1; i <= 2; i++) {
+            let targetMonth = currentMonth - i;
+            let targetYear = currentYear;
+
+            if (targetMonth < 0) {
+                targetMonth += 12;
+                targetYear -= 1;
+            }
+
+            let filteredData = lemburData.filter(entry => {
+                let entryDate = new Date(entry.tanggal);
+                return entryDate.getMonth() === targetMonth && entryDate.getFullYear() === targetYear;
+            });
+
+            let totalJam = filteredData.reduce((sum, entry) => sum + entry.jam, 0);
+            let gajiKotor = totalJam * 1.5 * umrPerJam + umrBulanan;
+
+            historyHtml += `<p>${new Date(targetYear, targetMonth).toLocaleString('default', { month: 'long', year: 'numeric' })}: ${gajiKotor.toLocaleString('ko-KR', { style: 'currency', currency: 'KRW' })}</p>`;
+        }
+
+        document.getElementById('gajiKotorHistory').innerHTML = historyHtml;
+    }
+
+    function getFilteredData() {
+        const selectedYear = document.getElementById('filterYear').value;
+        const selectedMonth = document.getElementById('filterMonth').value;
+
+        const currentMonth = new Date().getMonth() + 1;
+        const currentYear = new Date().getFullYear();
+
+        return lemburData.filter(entry => {
+            let entryDate = new Date(entry.tanggal);
+            let yearMatch = selectedYear ? entryDate.getFullYear() == selectedYear : entryDate.getFullYear() == currentYear;
+            let monthMatch = selectedMonth ? entryDate.getMonth() + 1 == selectedMonth : entryDate.getMonth() + 1 == currentMonth;
+            return yearMatch && monthMatch;
+        });
+    }
+
+    function updateLemburTable() {
+        const filteredData = getFilteredData();
+        filteredData.sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+
+        const dataLemburTable = document.getElementById('dataLembur');
+        dataLemburTable.innerHTML = '';
+        filteredData.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.tanggal}</td>
+                <td>${entry.jam}</td>
+                <td><button class="btn btn-danger btn-sm" onclick="removeData('${entry.tanggal}')"><i class="bi bi-trash"></i></button></td>
+            `;
+            dataLemburTable.appendChild(row);
+        });
+
+        document.getElementById('totalFilteredLembur').textContent = `Total Jam Lembur: ${filteredData.reduce((sum, entry) => sum + entry.jam, 0)} Jam`;
+    }
+
+    function populateYearDropdown() {
+        const yearDropdown = document.getElementById('filterYear');
+        let years = [...new Set(lemburData.map(entry => new Date(entry.tanggal).getFullYear()))];
+        yearDropdown.innerHTML = '<option value="">Semua Tahun</option>';
+        years.forEach(year => {
+            let option = document.createElement('option');
+            option.value = year;
+            option.textContent = year;
+            yearDropdown.appendChild(option);
+        });
+
+        const currentYear = new Date().getFullYear();
+        yearDropdown.value = currentYear;
+    }
+
+    function populateMonthDropdown() {
+        const monthDropdown = document.getElementById('filterMonth');
+        const currentMonth = new Date().getMonth() + 1;
+        monthDropdown.value = currentMonth.toString().padStart(2, '0');
+    }
+
+    // Export Functions
+    function exportToCSV() {
+    umrBulanan = parseFloat(localStorage.getItem('umrBulanan')) || 2065000;
+    umrPerJam = parseFloat(localStorage.getItem('umrPerJam')) || 9620;
+
+    const filteredData = getFilteredData();
+    const selectedMonth = document.getElementById('filterMonth').value;
+    const selectedYear = document.getElementById('filterYear').value;
+
+    const monthName = selectedMonth ? new Date(0, selectedMonth - 1).toLocaleString('default', { month: 'long' }) : 'Semua';
+    const yearName = selectedYear || 'Semua';
+
+    const csvRows = [];
+
+    // Header laporan
+    csvRows.push(`LAPORAN JAM LEMBUR`);
+    csvRows.push(`Periode,${monthName} ${yearName}`);
+    csvRows.push(`Tanggal Export,${new Date().toLocaleDateString('ko-KR')}`);
+    csvRows.push(''); // baris kosong
+
+    // Tabel data lembur
+    csvRows.push('Tanggal,Jam Lembur');
+    filteredData.forEach(row => {
+        csvRows.push(`${row.tanggal},${row.jam}`);
+    });
+
+    // Ringkasan
+    csvRows.push('');
+    const totalJam = filteredData.reduce((sum, entry) => sum + entry.jam, 0);
+    const gajiLembur = totalJam * 1.5 * umrPerJam;
+    const totalGaji = gajiLembur + umrBulanan;
+
+    
+    csvRows.push(`Total Jam Lembur,${totalJam}`);
+    csvRows.push(`Gaji Lembur (KRW),,${Math.round(gajiLembur)}`);
+	 csvRows.push(`UMR Bulanan,,${umrBulanan}`);
+    csvRows.push(`Gaji Kotor (Total + UMR),,${Math.round(totalGaji)}`);
+
+    const csvContent = csvRows.join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+
+    if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', `jam-lembur-${monthName}-${yearName}.csv`);
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+}
+
+function exportToExcel() {
+    umrBulanan = parseFloat(localStorage.getItem('umrBulanan')) || 2065000;
+    umrPerJam = parseFloat(localStorage.getItem('umrPerJam')) || 9620;
+
+    const filteredData = getFilteredData();
+    const selectedMonth = document.getElementById('filterMonth').value;
+    const selectedYear = document.getElementById('filterYear').value;
+
+    const monthName = selectedMonth ? new Date(0, selectedMonth - 1).toLocaleString('default', { month: 'long' }) : 'Semua';
+    const yearName = selectedYear || 'Semua';
+
+    const totalJam = filteredData.reduce((sum, entry) => sum + entry.jam, 0);
+    const gajiLembur = totalJam * 1.5 * umrPerJam;
+    const totalGaji = gajiLembur + umrBulanan;
+
+    const data = [
+        ['LAPORAN JAM LEMBUR'],
+        [`Periode`, `${monthName} ${yearName}`],
+        [`Tanggal Export`, new Date().toLocaleDateString('ko-KR')],
+        [],
+        ['Tanggal', 'Jam Lembur']
+    ];
+
+    filteredData.forEach(row => {
+        data.push([row.tanggal, row.jam]);
+    });
+
+    data.push([]);
+    data.push(['Total Jam Lembur', totalJam]);
+    data.push(['Gaji Lembur (KRW)', '', Math.round(gajiLembur)]);
+	 data.push(['UMR Bulanan', '', umrBulanan]);
+    data.push(['Gaji Kotor (Total + UMR)', '', Math.round(totalGaji)]);
+
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Laporan Lembur');
+    XLSX.writeFile(wb, `jam-lembur-${monthName}-${yearName}.xlsx`);
+}
+    function exportToPDF() {
+        const filteredData = getFilteredData();
+        const selectedMonth = document.getElementById('filterMonth').value;
+        const selectedYear = document.getElementById('filterYear').value;
+        
+        const monthName = selectedMonth ? new Date(0, selectedMonth - 1).toLocaleString('default', { month: 'long' }) : 'Semua';
+        const yearName = selectedYear || 'Semua';
+        
+        const { jsPDF } = window.jsPDF;
+        const doc = new jsPDF();
+        
+        // Header
+        doc.setFontSize(16);
+        doc.text('Laporan Jam Lembur', 20, 20);
+        
+        doc.setFontSize(12);
+        doc.text(`Periode: ${monthName} ${yearName}`, 20, 30);
+        doc.text(`Tanggal Export: ${new Date().toLocaleDateString('ko-KR')}`, 20, 40);
+        
+        // Table
+        let yPosition = 60;
+        const headers = ['Tanggal', 'Jam Lembur', 'Gaji Lembur (KRW)'];
+        
+        doc.setFontSize(10);
+        doc.setFont(undefined, 'bold');
+        headers.forEach((header, index) => {
+            doc.text(header, 20 + (index * 60), yPosition);
+        });
+        
+        doc.setFont(undefined, 'normal');
+        yPosition += 10;
+        
+        filteredData.forEach((row, index) => {
+            if (yPosition > 270) {
+                doc.addPage();
+                yPosition = 20;
+            }
+            
+            doc.text(row.tanggal, 20, yPosition);
+            doc.text(row.jam.toString(), 80, yPosition);
+            doc.text((row.jam * 1.5 * umrPerJam).toLocaleString('ko-KR'), 140, yPosition);
+            
+            yPosition += 8;
+        });
+        
+        // Total
+        const totalJam = filteredData.reduce((sum, entry) => sum + entry.jam, 0);
+        const totalGaji = totalJam * 1.5 * umrPerJam;
+        
+        yPosition += 10;
+        doc.setFont(undefined, 'bold');
+        doc.text('TOTAL', 20, yPosition);
+        doc.text(totalJam.toString(), 80, yPosition);
+        doc.text(totalGaji.toLocaleString('ko-KR'), 140, yPosition);
+        
+        doc.save(`jam-lembur-${monthName}-${yearName}.pdf`);
+    }
+
+    window.removeData = function(tanggal) {
+        lemburData = lemburData.filter(entry => entry.tanggal !== tanggal);
+        saveData();
+        updateLemburTable();
+        populateYearDropdown();
+        populateMonthDropdown();
+        updateCurrentMonthTotals();
+    };
+
+    document.getElementById('lemburForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const tanggal = document.getElementById('tanggal').value;
+        const jam = parseFloat(document.getElementById('jam').value);
+
+        if (lemburData.some(entry => entry.tanggal === tanggal)) {
+            document.getElementById('alertLemburFail').style.display = 'block';
+            document.getElementById('alertLemburSuccess').style.display = 'none';
+        } else if (tanggal && jam) {
+            lemburData.push({ tanggal, jam });
+            saveData();
+            updateLemburTable();
+            populateYearDropdown();
+            populateMonthDropdown();
+            updateCurrentMonthTotals();
+            document.getElementById('alertLemburSuccess').style.display = 'block';
+            document.getElementById('alertLemburFail').style.display = 'none';
+            document.getElementById('lemburForm').reset();
+            // Reset to today's date
+            document.getElementById('tanggal').value = new Date().toISOString().split('T')[0];
+        } else {
+            document.getElementById('alertLemburFail').style.display = 'block';
+            document.getElementById('alertLemburSuccess').style.display = 'none';
+        }
+
+        setTimeout(() => {
+            document.getElementById('alertLemburSuccess').style.display = 'none';
+            document.getElementById('alertLemburFail').style.display = 'none';
+        }, 3000);
+    });
+
+    document.getElementById('filterYear').addEventListener('change', updateLemburTable);
+    document.getElementById('filterMonth').addEventListener('change', updateLemburTable);
+
+    // Export event listeners
+    document.getElementById('exportCSV').addEventListener('click', exportToCSV);
+    document.getElementById('exportExcel').addEventListener('click', exportToExcel);
+     // document.getElementById('exportPDF').addEventListener('click', exportToPDF);
+
+document.getElementById('gajiForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        umrBulanan = parseFloat(document.getElementById('umrBulanan').value);
+        umrPerJam = parseFloat(document.getElementById('umrPerJam').value);
+        saveData();
+        updateLemburTable();
+        updateCurrentMonthTotals();
+
+        document.getElementById('alertGajiSuccess').style.display = 'block';
+        let gajiModal = bootstrap.Modal.getInstance(document.getElementById('gajiModal'));
+
+        setTimeout(() => {
+            gajiModal.hide(); 
+            document.getElementById('alertGajiSuccess').style.display = 'none';
+        }, 2000);
+    });
+
+    updateLemburTable();
+    populateYearDropdown();
+    populateMonthDropdown();
+    updateCurrentMonthTotals();
+});
+</script>
 </body>
   <footer class="custom-footer">
     <div class="container">
