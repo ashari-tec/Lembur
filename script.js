@@ -37,11 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     greetingElement.textContent = greeting;
-
-    // Tambahkan efek gradasi warna bumi
-    greetingElement.style.background = 'linear-gradient(90deg, #a8dadc, #457b9d, #1d3557)';
+    greetingElement.style.background = 'linear-gradient(90deg, #f5d0fe, #c4b5fd, #7dd3fc, #dbeafe)';
     greetingElement.style.webkitBackgroundClip = 'text';
-    greetingElement.style.webkitTextFillColor = 'transparent';
+    greetingElement.style.backgroundClip = 'text';
+    greetingElement.style.color = 'transparent';
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -189,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('alertLemburSuccess').style.display = 'block';
             document.getElementById('alertLemburFail').style.display = 'none';
             document.getElementById('lemburForm').reset();
+            document.getElementById('tanggal').value = new Date().toISOString().split('T')[0];
         } else {
             document.getElementById('alertLemburFail').style.display = 'block';
             document.getElementById('alertLemburSuccess').style.display = 'none';
@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('filterYear').addEventListener('change', updateLemburTable);
     document.getElementById('filterMonth').addEventListener('change', updateLemburTable);
 
-
     document.getElementById('gajiForm').addEventListener('submit', function(e) {
         e.preventDefault();
         umrBulanan = parseFloat(document.getElementById('umrBulanan').value);
@@ -216,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let gajiModal = bootstrap.Modal.getInstance(document.getElementById('gajiModal'));
 
         setTimeout(() => {
-            gajiModal.hide(); 
+            gajiModal.hide();
             document.getElementById('alertGajiSuccess').style.display = 'none';
         }, 2000);
     });
